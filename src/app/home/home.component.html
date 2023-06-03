@@ -5,10 +5,10 @@
             <app-users-list></app-users-list>
         </div>
         <div class="col-5">
-            <app-room-chat *ngFor="let room of openedRooms" [room]="room" (closeRoom)="toggleRoom($event)"></app-room-chat>         
+            <app-room-chat *ngFor="let room of openedRooms" [room]="room" [db]="openedRooms.length"   (closeRoom)="toggleRoom($event)"></app-room-chat>         
         </div>
         <div class="col-5">
-            <app-room-chat *ngFor="let room of openedRooms" [room]="room" (closeRoom)="toggleRoom($event)"></app-room-chat>         
+            <!-- <app-room-chat *ngFor="let room of openedRooms" [room]="room" (closeRoom)="toggleRoom($event)"></app-room-chat>          -->
         </div>
     </div>
 </div>

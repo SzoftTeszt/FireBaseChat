@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, ChangeDetectorRef } from '@angular/core';
 import { BaseService } from '../base.service';
 import { map } from 'rxjs';
 import { RoomMessage } from 'src/roomMessage';
@@ -11,12 +11,17 @@ import { RoomMessage } from 'src/roomMessage';
 })
 export class RoomChatComponent implements OnChanges{
 @Input() room:any;
+@Input() db:any;
 @Output() closeRoom: EventEmitter<any>= new EventEmitter();
 
 messages:any;
 message:any;
 
-constructor(private base:BaseService) {
+constructor(private base:BaseService, private cdref:ChangeDetectorRef) {
+}
+
+ngAfterContentChecked(){
+  this.cdref.detectChanges();
 }
 
 getMessages(){

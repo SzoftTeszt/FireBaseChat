@@ -1,12 +1,19 @@
+<div class="main" [ngStyle]="{'height': (90/db)+'vh' }">
 <h3>{{room.name}} - Chat <span (click)="close(room)">X</span></h3>
 
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea [(ngModel)]="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
-<button (click)="createMessage(message)" type="button" class="btn btn-primary">Chat</button>
 
-<div *ngFor="let m of messages">
-    {{m.userId}}, {{m.date}}, {{m.message}}
+
+<div #scrollDiv [scrollTop]="scrollDiv.scrollHeight" class="overflow-container" [ngStyle]="{'height': (50/db)+'vh' }">
+    <div *ngFor="let m of messages">
+        {{m.userId}}, {{m.date}}, {{m.message}}
+    </div>
 </div>
+
+<div class="form-group">
+   
+    <textarea [(ngModel)]="message" class="form-control" id="newmessage" rows="3"></textarea>
+    <button id="addmessage" (click)="createMessage(message)" type="button" class="btn btn-primary">Chat</button>
+</div>
+
+
 
