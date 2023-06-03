@@ -1,0 +1,8 @@
+<div class="input-group mb-3">
+    <input [(ngModel)]="newRoom.name" type="text" class="form-control" placeholder="Szoba"  aria-describedby="basic-addon1">
+    <span class="input-group-text" id="basic-addon1">
+    <button (click)="onCreate(newRoom)"  type="button" class="btn btn-primary">Felvesz</button>
+    </span>
+</div>
+
+<div (click)="toggleRoom(room)" *ngFor="let room of rooms">{{room.name}}</div>
