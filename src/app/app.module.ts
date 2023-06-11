@@ -13,14 +13,26 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { enviroments } from './enviroments';
 import { FormsModule } from '@angular/forms';
-
+import { SiginComponent } from './sigin/sigin.component';
+import { SigupComponent } from './sigup/sigup.component';
+import { VerifyemailComponent } from './verifyemail/verifyemail.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { UserComponent } from './user/user.component';
+import { NavComponent } from './nav/nav.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     RoomsListComponent,
     UsersListComponent,
     RoomChatComponent,
-    HomeComponent
+    HomeComponent,
+    SiginComponent,
+    SigupComponent,
+    VerifyemailComponent,
+    ForgotpasswordComponent,
+    UserComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +40,8 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     AngularFireModule.initializeApp(enviroments.firebaseConfig),
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

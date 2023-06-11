@@ -5,11 +5,13 @@
 /tmp
 /out-tsc
 /bazel-out
+/public
 
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
+/functions/oldchat-5c6d7-firebase-adminsdk-hu6bm-13f6e80141.json
 
 # IDEs and editors
 .idea/
@@ -42,3 +44,4 @@ testem.log
 Thumbs.db
 enviroments.ts
 ./src/app/enviroments.ts
+

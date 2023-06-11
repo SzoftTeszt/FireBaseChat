@@ -1,0 +1,55 @@
+<nav class="mx-2 navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand"  routerLink="/food">Restaurante</a>
+    <button (click)="collapse= !collapse" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div [ngbCollapse]="collapse" class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul *ngIf="isLogged; else notlogged" class="navbar-nav mr-auto">       
+       
+        <li class="nav-item">
+          <a class="nav-link" 
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}"
+          >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+          routerLink="/user"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}"
+          >User</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+          (click)="SignOut()"
+          >Logout</a>
+        </li>  
+        <!-- <div>
+            Hello, {{authService.userData | json}}
+        </div> -->
+    </ul>
+
+      <ng-template #notlogged>
+      <ul class="navbar-nav mr-auto">       
+      
+        <li class="nav-item">
+          <a class="nav-link" 
+          routerLink="/signin"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}"
+          >Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+          routerLink="/signup"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}"
+          >Registration</a>
+        </li>      
+
+      </ul>
+      </ng-template>
+    </div>
+  </nav>
